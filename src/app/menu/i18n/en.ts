@@ -77,10 +77,13 @@ export const locale = {
         }
       },
       UI: {
-        SECTION: 'User Interface',
+        SECTION: 'Kullanıcı Arayüzü',
         TYPOGRAPHY: 'Typography',
         COLORS: 'Colors',
         FEATHER: 'Feather',
+        DASHBOARD: 'Anasayfa',
+        PROCESS: 'İşlemler',
+        ACCOUNT: 'Hesap',
         CARDS: {
           COLLAPSIBLE: 'Cards',
           BADGE: 'New',

@@ -57,17 +57,14 @@ export class AuthenticationService {
       .pipe(
         map(user => {
           // login successful if there's a jwt token in the response
-          if (user && user.token) {
+          if (user) {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('currentUser', JSON.stringify(user));
-
+            localStorage.setItem('currentUser', JSON.stringify(user.data));
             // Display welcome toast!
             setTimeout(() => {
               this._toastrService.success(
-                'You have successfully logged in as an ' +
-                  user.role +
-                  ' user to Vuexy. Now you can start to explore. Enjoy! 🎉',
-                '👋 Welcome, ' + user.firstName + '!',
+                'Başarılı şekilde login oldunuz. Şimdi yiyeceğinizi seçip çocuğunuzun sağlıklı beslenmesini sağlayın! 🎉',
+                '👋 Hoş geldiniz, ' + user.data.fullname + '!',
                 { toastClass: 'toast ngx-toastr', closeButton: true }
               );
             }, 2500);
