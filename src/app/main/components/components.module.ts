@@ -25,9 +25,12 @@ import { TabsModule } from 'app/main/components/tabs/tabs.module';
 import { TimelineModule } from 'app/main/components/timeline/timeline.module';
 import { ToastsModule } from 'app/main/components/toasts/toasts.module';
 import { TooltipsModule } from 'app/main/components/tooltips/tooltips.module';
+import { StudentsNumericComponent } from './witgets/students-numeric/students-numeric.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    StudentsNumericComponent
+  ],
   imports: [
     AccordionModule,
     AlertsModule,

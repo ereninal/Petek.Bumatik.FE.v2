@@ -469,7 +469,7 @@ export const menu: CoreMenu[] = [
         translate: 'MENU.UI.DASHBOARD',
         type: 'item',  
         icon: 'airplay',
-        url: 'ui/content/typography'
+        url: 'dashboard/'
       },
       {
         id: 'process',
@@ -477,7 +477,7 @@ export const menu: CoreMenu[] = [
         translate: 'MENU.UI.PROCESS',
         type: 'item',  
         icon: 'shopping-cart',
-        url: 'ui/content/asdasd'
+        url: '/process'
       },
       {
         id: 'account',

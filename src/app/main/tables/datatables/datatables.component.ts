@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ColumnMode, DatatableComponent, SelectionType } from '@swimlane/ngx-datatable';
 
@@ -14,6 +14,13 @@ import { locale as portuguese } from 'app/main/tables/datatables/i18n/pt';
 import * as snippet from 'app/main/tables/datatables/datatables.snippetcode';
 
 import { DatatablesService } from 'app/main/tables/datatables/datatables.service';
+import { HttpClient } from '@angular/common/http';
+import { ThemeService } from 'ng2-charts';
+
+import { MultiResponseModel } from 'app/auth/models/multiResponse';
+import { Student } from '../../../../app/auth/models/student';
+import { environment } from 'environments/environment';
+
 
 @Component({
   selector: 'app-datatables',
@@ -25,7 +32,7 @@ export class DatatablesComponent implements OnInit {
   // Private
   private _unsubscribeAll: Subject<any>;
   private tempData = [];
-
+  private students:Student[] = [];
   // public
   public contentHeader: object;
   public rows: any;
@@ -173,7 +180,7 @@ export class DatatablesComponent implements OnInit {
    * @param {DatatablesService} _datatablesService
    * @param {CoreTranslationService} _coreTranslationService
    */
-  constructor(private _datatablesService: DatatablesService, private _coreTranslationService: CoreTranslationService) {
+  constructor(private _datatablesService: DatatablesService, private _coreTranslationService: CoreTranslationService,private httpClient:HttpClient) {
     this._unsubscribeAll = new Subject();
     this._coreTranslationService.translate(english, french, german, portuguese);
   }
@@ -190,31 +197,29 @@ export class DatatablesComponent implements OnInit {
       this.tempData = this.rows;
       this.kitchenSinkRows = this.rows;
       this.exportCSVData = this.rows;
+      this.GetAllStudentbyParent();
     });
-
+    
     // content header
     this.contentHeader = {
-      headerTitle: 'Datatables',
+      headerTitle: 'İşlemler',
       actionButton: true,
       breadcrumb: {
         type: '',
         links: [
           {
-            name: 'Home',
-            isLink: true,
-            link: '/'
-          },
-          {
-            name: 'Forms & Tables',
-            isLink: true,
-            link: '/'
-          },
-          {
-            name: 'Datatables',
+            name: 'Öğrenci İşlemleri',
             isLink: false
-          }
+            
+          },
+          
         ]
       }
     };
+  }
+  GetAllStudentbyParent(){
+    this._datatablesService.GetAllStudentbyParent().subscribe((response)=>{
+      this.students=response.data;
+    })
   }
 }

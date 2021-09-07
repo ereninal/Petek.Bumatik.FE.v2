@@ -66,7 +66,7 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'tables',
+    path: 'process',
     loadChildren: () => import('./main/tables/tables.module').then(m => m.TablesModule),
     canActivate: [AuthGuard]
   },

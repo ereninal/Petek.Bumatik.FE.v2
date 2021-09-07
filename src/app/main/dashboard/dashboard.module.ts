@@ -20,6 +20,7 @@ import { DashboardService } from 'app/main/dashboard/dashboard.service';
 
 import { AnalyticsComponent } from 'app/main/dashboard/analytics/analytics.component';
 import { EcommerceComponent } from 'app/main/dashboard/ecommerce/ecommerce.component';
+import { HomeComponent } from './home/home.component';
 
 const routes = [
   {
@@ -40,11 +41,19 @@ const routes = [
       css: DashboardService
     },
     data: { animation: 'decommerce' }
+  },{
+    path: '/',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      css: DashboardService
+    }
+    
   }
 ];
 
 @NgModule({
-  declarations: [AnalyticsComponent, EcommerceComponent],
+  declarations: [AnalyticsComponent, EcommerceComponent, HomeComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

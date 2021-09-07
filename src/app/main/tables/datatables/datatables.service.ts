@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 
 import { BehaviorSubject, Observable } from 'rxjs';
+import { MultiResponseModel } from 'app/auth/models/multiResponse';
+import { Student } from 'app/auth/models/student';
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class DatatablesService implements Resolve<any> {
@@ -33,7 +36,9 @@ export class DatatablesService implements Resolve<any> {
       }, reject);
     });
   }
-
+  GetAllStudentbyParent():Observable<MultiResponseModel<Student>>{
+    return this._httpClient.get<MultiResponseModel<Student>>(`${environment.apiUrl}/api/Parent/GetStudentByParent?id=`+localStorage.getItem('currentUserId'));
+  }
   /**
    * Get rows
    */
