@@ -472,12 +472,12 @@ export const menu: CoreMenu[] = [
         url: 'dashboard/'
       },
       {
-        id: 'process',
+        id: 'pages',
         title: 'İşlemler',
         translate: 'MENU.UI.PROCESS',
         type: 'item',  
         icon: 'shopping-cart',
-        url: '/process'
+        url: '/pages'
       },
       {
         id: 'account',

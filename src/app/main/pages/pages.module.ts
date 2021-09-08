@@ -10,6 +10,7 @@ import { ContentHeaderModule } from 'app/layout/components/content-header/conten
 
 import { KbModule } from './kb/kb.module';
 import { BlogModule } from './blog/blog.module';
+import { ProcessModule } from './process/process.module';
 import { Ng2FlatpickrModule } from 'ng2-flatpickr';
 import { ProfileModule } from './profile/profile.module';
 import { PricingModule } from './pricing/pricing.module';
@@ -18,8 +19,11 @@ import { AccountSettingsModule } from './account-settings/account-settings.modul
 import { AuthenticationModule } from './authentication/authentication.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 
+
 @NgModule({
-  declarations: [],
+  declarations: [
+    
+  ],
   imports: [
     CommonModule,
     CoreCommonModule,
@@ -35,7 +39,8 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
     ProfileModule,
     KbModule,
     FaqModule,
-    AccountSettingsModule
+    AccountSettingsModule,
+    ProcessModule
   ],
 
   providers: []
