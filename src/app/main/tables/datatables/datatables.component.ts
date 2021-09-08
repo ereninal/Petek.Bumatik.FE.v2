@@ -32,7 +32,7 @@ export class DatatablesComponent implements OnInit {
   // Private
   private _unsubscribeAll: Subject<any>;
   private tempData = [];
-  private students:Student[] = [];
+  public  students:Student[] = [];
   // public
   public contentHeader: object;
   public rows: any;
@@ -192,13 +192,13 @@ export class DatatablesComponent implements OnInit {
    * On init
    */
   ngOnInit() {
-    this._datatablesService.onDatatablessChanged.pipe(takeUntil(this._unsubscribeAll)).subscribe(response => {
-      this.rows = response;
-      this.tempData = this.rows;
-      this.kitchenSinkRows = this.rows;
-      this.exportCSVData = this.rows;
-      this.GetAllStudentbyParent();
-    });
+    // this._datatablesService.onDatatablessChanged.pipe(takeUntil(this._unsubscribeAll)).subscribe(response => {
+    //   this.rows = response;
+    //   this.tempData = this.rows;
+    //   this.kitchenSinkRows = this.rows;
+    //   this.exportCSVData = this.rows;
+    // });
+    this.GetAllStudentbyParent();
     
     // content header
     this.contentHeader = {
@@ -219,7 +219,18 @@ export class DatatablesComponent implements OnInit {
   }
   GetAllStudentbyParent(){
     this._datatablesService.GetAllStudentbyParent().subscribe((response)=>{
-      this.students=response.data;
+      this.rows=response.data;
+      this.students = this.rows;
+      this.exportCSVData = this.rows;
+      
+    },responseError => {
+      if(responseError.error.Errors.length>0){
+        console.log(responseError);
+        for (let i = 0; i < responseError.error.Errors.length; i++) {
+          //this.toastService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası.")
+          console.log(responseError.error.Errors[i].ErrorMessage)
+        }
+      }
     })
   }
 }
