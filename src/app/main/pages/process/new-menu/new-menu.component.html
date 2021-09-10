@@ -1,1 +1,101 @@
-<p>new-menu works!</p>
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <app-content-header [contentHeader]="contentHeader"></app-content-header>
+    <section class="app-user-edit">
+      <div class="card">
+        <div class="card-body">
+          <ul ngbNav #nav="ngbNav" class="nav nav-pills">
+            <li ngbNavItem>
+              <a ngbNavLink class="d-flex align-items-center"><i data-feather="user" class="mr-sm-50"></i><span
+                  class="d-none d-sm-block">Öğrenci</span></a>
+              <ng-template ngbNavContent>
+                <!-- Account Tab starts -->
+
+                <div class="tab-pane active" id="account" aria-labelledby="account-tab" role="tabpanel">
+                  <!-- users edit media object start -->
+                  <div class="media mb-2">
+                    <div class="media-body mt-50">
+                      <form [formGroup]="modelForm">
+                        <div class="row">
+                          <div class="col-lg-9">
+                            <div class="custom-control custom-radio" *ngFor="let item of menuTypes">
+                              <input type="radio" id="{{ item?.id }}" [value]="item.id" name="menuTypeId"
+                                formControlName="menuTypeId" class="custom-control-input" />
+                              <label class="custom-control-label" for="{{ item?.id }}" style="font-size: medium;">
+                                {{ item?.type }} ({{ item?.startDate }} -
+                                {{ item?.finishDate }})
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-lg-3">
+                            <h4>Öğrenci Adı: {{ student?.fullname }}</h4>
+                            <h4>Bileklik Numarası: {{ student?.bandNumber }}</h4>
+                          </div>
+                        </div>
+                        <div class="row">
+
+                          <div class="col-lg-3">
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="Min-Max Date Picker"
+                                  [(ngModel)]="useDate" ngbDatepicker #MinMaxDP="ngbDatepicker" minDate="{{minDate}}"
+                                  maxDate="">
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary feather icon-calendar"
+                                    (click)="MinMaxDP.toggle()" type="button" rippleEffect></button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row border p-3 ml-1 mr-1">
+                          <div class="col-lg-12">
+                            <div formArrayName="selectedAutomatItems">
+                              <div class="row mb-2" *ngFor="let item of selectedAutomatItems.controls; let i=index">
+                                <div class="col-lg-2" [formGroupName]="i">
+                                  <input class="form-control" formControlName="count" placeholder="Ürün sayısı girin.."
+                                    type="number" />
+                                </div>
+                                <div class="col-lg-7" [formGroupName]="i">
+                                  <select
+                                    class="form-control cl-lg-5"
+                                    aria-label="Default select example"
+                                    formControlName="itemId"
+                                  >
+                                    <option selected>Yiyecekler..</option>
+                                    <option  *ngFor="let item of automatItems" [ngValue]=item.id >{{ item.name }}</option>
+                                  </select>
+                                </div>
+                                <div class="col-lg-3">
+                                  <button class="btn btn-outline-danger ml-1 waves-effect" (click)="removeSelectedItem(i)">
+                                    Sil
+                                  </button>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-lg-12 text-center">
+                                  <button class="btn btn-dark mt-2 " (click)="addselectedAutomatItems()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                    Yiyecek Ekle
+                                  </button>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </li>
+          </ul>
+          <div [ngbNavOutlet]="nav" class="mt-2"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

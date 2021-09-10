@@ -27,17 +27,17 @@ const routes: Routes = [
       canActivate: [AuthGuard],
     },
     {
-        path: 'student-detail/:id',
+        path: 'student-detail/:bandNumber',
         component: StudentDetailComponent,
         canActivate: [AuthGuard],
       },
     {
-      path: 'new-menu',
+      path: 'new-menu/:id',
       component: NewMenuComponent,
       canActivate: [AuthGuard],
     },
     {
-      path: 'menus',
+      path: 'menus/:id',
       component: MenusComponent,
       canActivate: [AuthGuard],
       
