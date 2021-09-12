@@ -19,6 +19,7 @@ import { MenuDetailComponent } from 'app/main/pages/process/menu-detail/menu-det
 import { NgModule } from "@angular/core";
 import { StudentsComponent } from './students/students.component';
 import { StudentDetailComponent } from "./student-detail/student-detail.component";
+import { CreateStudentComponent } from './create-student/create-student.component';
 
 const routes: Routes = [
     {
@@ -46,12 +47,16 @@ const routes: Routes = [
       path: 'menu-details',
       component: MenuDetailComponent,
       canActivate: [AuthGuard],
+    },{
+      path: 'create-student',
+      component: CreateStudentComponent,
+      canActivate: [AuthGuard],
     }
   ];
 
 
 @NgModule({
-    declarations: [NewMenuComponent,MenusComponent,MenuDetailComponent, StudentsComponent],
+    declarations: [NewMenuComponent,MenusComponent,MenuDetailComponent, StudentsComponent, CreateStudentComponent],
     imports: [
       CommonModule,
       RouterModule.forChild(routes),
@@ -64,7 +69,8 @@ const routes: Routes = [
       NgxDatatableModule,
       CsvModule,
       TranslateModule,
-      CardSnippetModule
+      CardSnippetModule,
+      
     ],
   
     providers: []

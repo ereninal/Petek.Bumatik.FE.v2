@@ -38,12 +38,10 @@
                             <div class="form-group">
                               <div class="input-group">
                                 <input class="form-control" placeholder="yyyy-mm-dd" name="Min-Max Date Picker"
-                                  [(ngModel)]="useDate" ngbDatepicker #MinMaxDP="ngbDatepicker" minDate="{{minDate}}"
-                                  maxDate="">
-                                <div class="input-group-append">
-                                  <button class="btn btn-outline-secondary feather icon-calendar"
-                                    (click)="MinMaxDP.toggle()" type="button" rippleEffect></button>
-                                </div>
+                                   formControlName="useDate" minDate="{{minDate}}"
+                                  maxDate=""
+                                  type="date">
+                               
                               </div>
                             </div>
                           </div>
@@ -67,14 +65,14 @@
                                   </select>
                                 </div>
                                 <div class="col-lg-3">
-                                  <button class="btn btn-outline-danger ml-1 waves-effect" (click)="removeSelectedItem(i)">
+                                  <button class="btn btn-relief-danger ml-1 waves-effect w-100" (click)="removeSelectedItem(i)">
                                     Sil
                                   </button>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col-lg-12 text-center">
-                                  <button class="btn btn-dark mt-2 " (click)="addselectedAutomatItems()">
+                                  <button class="btn btn-gradient-secondary mt-2 " (click)="addselectedAutomatItems()">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                     Yiyecek Ekle
                                   </button>
@@ -85,7 +83,12 @@
                           </div>
                         </div>
                       </form>
-
+                      <div class="d-flex flex-row-reverse mt-2">
+                        
+                          <button type="button" id="buttonStudentAdd" class="btn btn-gradient-secondary" (click)="addSelectedMenuByStudent()">İşlemi Tamamla</button>
+                         
+                        
+                      </div>
                     </div>
                   </div>
                 </div>

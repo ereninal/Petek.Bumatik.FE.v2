@@ -10,6 +10,7 @@ import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 import { formatDate } from '@angular/common';
 import { SelectedMenuModel } from 'app/auth/models/selectMenuModel';
+import { School } from 'app/auth/models/school';
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,9 @@ export class ParentService {
   }
   AddSelectedMenuByStudent(menu:SelectedMenuModel):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(`${environment.apiUrl}`+ApiUrl.API_ADD_SELECTED_MENUS_BY_STUDENT,menu);
+  }
+  GetSchools():Observable<MultiResponseModel<School>>{
+    return this.httpClient.get<MultiResponseModel<School>>(`${environment.apiUrl}`+ApiUrl.API_GET_SCHOOLS);
   }
 }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AutomatService } from '@core/services/automat.service';
 import { ParentService } from '@core/services/parent.service';
 import { AutomatItem } from 'app/auth/models/automatItem';
@@ -22,20 +22,21 @@ export class NewMenuComponent implements OnInit {
   };
   public contentHeader: object;
   public minDate = new Date().getFullYear() +'-'+new Date().getMonth()+'-'+new Date().getDay();
+  public returnUrl: string;
   modelForm!:FormGroup;
   automatItems:AutomatItem[] = [];
   student?:Student;
   menuTypes:MenuType[] = [];
   model!:FormArray;
   studentId?:number;
-  constructor(private formBuilder:FormBuilder,private parentService:ParentService,private title:Title,private route:ActivatedRoute,private automatService:AutomatService,private toastService:ToastrService) { }
+  constructor(private formBuilder:FormBuilder,private parentService:ParentService,private title:Title,private route:ActivatedRoute,private automatService:AutomatService,private toastService:ToastrService,private router: Router) { }
 
   ngOnInit(): void {
     this.getAutomatItems();
     this.loadStudent();
     this.getMenuTypes();
     this.createMenuSelectForm();
-    
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/pages/menus/'+this.studentId;
     this.contentHeader = {
       headerTitle: 'İşlemler',
       actionButton: true,
@@ -102,20 +103,20 @@ export class NewMenuComponent implements OnInit {
   addSelectedMenuByStudent(){
     if(this.modelForm.valid){
       let selectedItemModel = Object.assign({studentId:Number(this.studentId)},this.modelForm.value);
-      console.log(selectedItemModel);
       this.parentService.AddSelectedMenuByStudent(selectedItemModel).subscribe((response)=>{
-        this.toastService.success(response.message,"Başarılı")
+        this.toastService.success(response.message.toString(),"Başarılı");
+        this.router.navigate([this.returnUrl]);
       },responseError=>{
         if(responseError.error.Errors.length>0){
           console.log(responseError);
-          for (let i = 0; i < responseError.error.Errors.length; i++) {
-            this.toastService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası.")
-          }
+          // for (let i = 0; i < responseError.error.Errors.length; i++) {
+          //   this.toastService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası.")
+          // }
         }
       })
     }
     else{
-      this.toastService.warning("Formunuz eksik","Dikkat")
+      this.toastService.warning("Formunuz eksik","Dikkat");
     }
   }
 

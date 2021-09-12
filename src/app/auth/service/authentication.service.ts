@@ -27,7 +27,9 @@ export class AuthenticationService {
 
   // getter: currentUserValue
   public get currentUserValue(): User {
+   
     return this.currentUserSubject.value;
+    
   }
 
   /**
