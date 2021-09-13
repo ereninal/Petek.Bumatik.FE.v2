@@ -1,95 +1,62 @@
 <div class="content-wrapper container-xxl p-0">
-    <div class="content-body">
-      <!-- content-header component -->
-      <app-content-header [contentHeader]="contentHeader"></app-content-header>
-  
-    
-      <section id="multiple-column-form">
-        <div class="row match-height">
-          <div class="col-12">
-            <core-card-snippet>
-              <h4 class="card-title"></h4>
-              <div class="card-body">
-                <form class="form">
-                  <div class="row">
-                    <div class="col-md-6 col-12">
-                      <div class="form-group">
-                        <label for="first-name-column">Adı ve Soyadı</label>
-                        <input
-                          type="text"
-                          id="first-name-column"
-                          class="form-control"
-                          placeholder="First Name"
-                          name="fname-column"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                      <div class="form-group">
-                        <label for="last-name-column">Last Name</label>
-                        <input
-                          type="text"
-                          id="last-name-column"
-                          class="form-control"
-                          placeholder="Last Name"
-                          name="lname-column"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                      <div class="form-group">
-                        <label for="city-column">City</label>
-                        <input type="text" id="city-column" class="form-control" placeholder="City" name="city-column" />
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                      <div class="form-group">
-                        <label for="country-floating">Country</label>
-                        <input
-                          type="text"
-                          id="country-floating"
-                          class="form-control"
-                          name="country-floating"
-                          placeholder="Country"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                      <div class="form-group">
-                        <label for="company-column">Company</label>
-                        <input
-                          type="text"
-                          id="company-column"
-                          class="form-control"
-                          name="company-column"
-                          placeholder="Company"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                      <div class="form-group">
-                        <label for="email-id-column">Email</label>
-                        <input
-                          type="email"
-                          id="email-id-column"
-                          class="form-control"
-                          name="email-id-column"
-                          placeholder="Email"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <button type="submit" rippleEffect class="btn btn-primary mr-1">Submit</button>
-                      <button type="reset" rippleEffect class="btn btn-outline-secondary">Reset</button>
+  <div class="content-body">
+    <!-- content-header component -->
+    <app-content-header [contentHeader]="contentHeader"></app-content-header>
+
+
+    <section id="multiple-column-form">
+      <div class="row match-height">
+        <div class="col-12">
+          <core-card-snippet>
+            <h4 class="card-title"></h4>
+            <div class="card-body">
+              <form class="form" [formGroup]="studentAddForm">
+                <div class="row">
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="first-name-column">Adı ve Soyadı</label>
+                      <input type="text" id="first-name-column" class="form-control" placeholder="Örnek: Mustafa Kemal"
+                        name="fname-column" formControlName="fullName" />
                     </div>
                   </div>
-                </form>
-              </div>
-            </core-card-snippet>
-          </div>
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="last-name-column">Bileklik Numarası</label>
+                      <input type="text" id="last-name-column" class="form-control" placeholder="Örnek: 188118811881"
+                        name="lname-column" formControlName="bandNumber" />
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                      <label>Okullar</label>
+                      <select class="form-control basic" formControlName="schoolId" id="schoolId" required>
+                        <option value="" selected="selected" disabled>Okul Seçiniz</option>
+                        <option  *ngFor="let item of schools" [ngValue]=item.id >{{ item.schoolName }}</option>
+                      </select>
+                      <!-- <ng-select [items]="schools" bindLabel="schoolName" bindValue="id" [loading]="selectBasicLoading">
+                      </ng-select> -->
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="country-floating">Doğum Tarihi</label>
+                      <input type="date" id="birthDate" formControlName="birthDate" class="form-control" required />
+                    </div>
+                  </div>
+
+
+                  <div class="col-12">
+                    <button type="submit" (click)="addStudent()" rippleEffect
+                      class="btn btn-primary mr-1">Kaydet</button>
+                    <button type="reset" rippleEffect class="btn btn-outline-secondary">Sıfırla</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </core-card-snippet>
         </div>
-      </section>
-      <!-- Basic multiple Column Form section end -->
-    </div>
+      </div>
+    </section>
+    <!-- Basic multiple Column Form section end -->
   </div>
-  
+</div>

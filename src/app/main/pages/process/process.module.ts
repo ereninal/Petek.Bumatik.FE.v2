@@ -12,7 +12,6 @@ import { CoreCommonModule } from '@core/common.module';
 import { CardSnippetModule } from '@core/components/card-snippet/card-snippet.module';
 import { AuthGuard } from 'app/auth/helpers';
 
-
 import { NewMenuComponent } from 'app/main/pages/process/new-menu/new-menu.component';
 import { MenusComponent } from 'app/main/pages/process/menus/menus.component';
 import { MenuDetailComponent } from 'app/main/pages/process/menu-detail/menu-detail.component';

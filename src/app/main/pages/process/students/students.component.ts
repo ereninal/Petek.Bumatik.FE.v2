@@ -200,6 +200,7 @@ export class StudentsComponent implements OnInit {
       this.rows=response.data;
       this.students = this.rows;
       this.exportCSVData = this.rows;
+      console.log(response.data);
       
     },responseError => {
       console.log(responseError);

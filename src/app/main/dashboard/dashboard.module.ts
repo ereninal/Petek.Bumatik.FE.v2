@@ -42,7 +42,7 @@ const routes = [
     },
     data: { animation: 'decommerce' }
   },{
-    path: '/',
+    path: '',
     component: HomeComponent,
     canActivate: [AuthGuard],
     resolve: {
