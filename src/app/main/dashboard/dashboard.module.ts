@@ -21,6 +21,7 @@ import { DashboardService } from 'app/main/dashboard/dashboard.service';
 import { AnalyticsComponent } from 'app/main/dashboard/analytics/analytics.component';
 import { EcommerceComponent } from 'app/main/dashboard/ecommerce/ecommerce.component';
 import { HomeComponent } from './home/home.component';
+import { StatisticsComponent } from './home/statistics/statistics.component';
 
 const routes = [
   {
@@ -53,7 +54,7 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [AnalyticsComponent, EcommerceComponent, HomeComponent],
+  declarations: [AnalyticsComponent, EcommerceComponent, HomeComponent, StatisticsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -64,7 +65,7 @@ const routes = [
     NgApexchartsModule,
     InvoiceModule
   ],
-  providers: [DashboardService, InvoiceListService],
+  providers: [DashboardService, InvoiceListService,StatisticsComponent],
   exports: [EcommerceComponent]
 })
 export class DashboardModule {}

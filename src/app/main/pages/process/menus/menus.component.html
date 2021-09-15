@@ -66,34 +66,24 @@
           <ngx-datatable-column name="Oluşturulma Tarihi" prop="createdDate" [width]="120"></ngx-datatable-column>
           <ngx-datatable-column name="İçerik Sayısı" prop="selectedItemCount" [width]="120"></ngx-datatable-column>
           <!-- <ngx-datatable-column name="Salary" prop="salary" [width]="120"></ngx-datatable-column> -->
-          <!-- <ngx-datatable-column name="Status" prop="status" [width]="120">
+          <ngx-datatable-column name="Durum" prop="lastStatus" [width]="120">
             <ng-template let-status="value" ngx-datatable-cell-template>
               <div
                 class="badge badge-pill"
                 [ngClass]="{
-                  'badge-light-primary': status == '1',
-                  'badge-light-success': status == '2',
-                  'badge-light-danger': status == '3',
-                  'badge-light-warning': status == '4',
-                  'badge-light-info': status == '5'
+                  'badge-light-primary': status == '0',
+                  'badge-light-success': status == '1'
+                  
                 }"
               >
                 {{
-                  status == 1
-                    ? 'Current'
-                    : status == 2
-                    ? 'Professional'
-                    : status == 3
-                    ? 'Rejected'
-                    : status == 4
-                    ? 'Resigned'
-                    : status == 5
-                    ? 'Applied'
-                    : 'Applied'
+                  status == '1'
+                    ? 'Aktif'
+                    : 'Pasif'
                 }}
               </div>
             </ng-template>
-          </ngx-datatable-column> -->
+          </ngx-datatable-column>
           <ngx-datatable-column name="İşlemler" prop="rows" [width]="120" [sortable]="false">
             <ng-template let-row="row" let-name="value" ngx-datatable-cell-template>
               <div class="d-flex align-items-center">

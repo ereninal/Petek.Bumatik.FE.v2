@@ -195,6 +195,7 @@ export class MenusComponent implements OnInit {
   getMenuInfoByStudent(id:number){
     this.parentService.GetAllSelectedMenusByStudent(id).subscribe((response)=>{
       this.menuInfos = response.data;
+      console.log(response.data);
     })
   }
 }
