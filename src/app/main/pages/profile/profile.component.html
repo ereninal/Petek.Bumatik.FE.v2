@@ -16,11 +16,11 @@
               <!-- profile picture -->
               <div class="profile-img-container d-flex align-items-center">
                 <div class="profile-img">
-                  <img [src]="data.profileData.header.avatar" class="rounded img-fluid" alt="Card image" />
+                  <img src="assets/images/portrait/small/{{ this.currentUser.avatar }}" class="rounded img-fluid" alt="Card image" />
                 </div>
                 <!-- profile title -->
                 <div class="profile-title ml-3">
-                  <h2 class="text-white">{{ data.profileData.header.username }}</h2>
+                  <h2 class="text-white">{{ this.currentUser.fullname }}</h2>
                   <p class="text-white">{{ data.profileData.header.designation }}</p>
                 </div>
               </div>

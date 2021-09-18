@@ -13,7 +13,7 @@ import { ProfileComponent } from 'app/main/pages/profile/profile.component';
 
 const routes: Routes = [
   {
-    path: 'profile',
+    path: '',
     component: ProfileComponent,
     canActivate: [AuthGuard],
     resolve: {

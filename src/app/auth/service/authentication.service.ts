@@ -63,6 +63,7 @@ export class AuthenticationService {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('currentUser', JSON.stringify(user.data));
             localStorage.setItem('token', JSON.stringify(user.data.token));
+            localStorage.setItem('currentUsername', JSON.stringify(user.data.fullname));
             localStorage.setItem('currentUserId', JSON.stringify(user.data.parentId));
             
             // Display welcome toast!

@@ -2,8 +2,8 @@ export const locale = {
   lang: 'en',
   data: {
     SAMPLE: {
-      CONGRATULATIONS: 'Congratulations',
-      BADGE: 'You have won gold medal'
+      CONGRATULATIONS: 'Tebrikler!',
+      BADGE: 'Bu haftaki en fazla sipariş giren sensin!'
     }
   }
 };

@@ -5,6 +5,8 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { ProfileService } from 'app/main/pages/profile/profile.service';
+import { User } from 'app/auth/models';
+import { AuthenticationService } from 'app/auth/service';
 
 @Component({
   selector: 'app-profile',
@@ -20,7 +22,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   public Monthly = false;
   public toggleNavbarRef = false;
   public loadMoreRef = false;
-
+  public currentUser: User;
   // private
   private _unsubscribeAll: Subject<any>;
 
@@ -29,8 +31,9 @@ export class ProfileComponent implements OnInit, OnDestroy {
    *
    * @param {PricingService} _pricingService
    */
-  constructor(private _pricingService: ProfileService, private sanitizer: DomSanitizer) {
+  constructor(private _pricingService: ProfileService, private sanitizer: DomSanitizer,private authenticationService:AuthenticationService) {
     this._unsubscribeAll = new Subject();
+    this.authenticationService.currentUser.subscribe(x => (this.currentUser = x));
   }
 
   // Public Methods
@@ -56,7 +59,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this._pricingService.onPricingChanged.pipe(takeUntil(this._unsubscribeAll)).subscribe(response => {
       this.data = response;
     });
-
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     // content header
     this.contentHeader = {
       headerTitle: 'Profile',

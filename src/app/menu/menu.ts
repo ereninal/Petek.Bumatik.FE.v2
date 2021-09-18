@@ -485,7 +485,7 @@ export const menu: CoreMenu[] = [
         translate: 'MENU.UI.ACCOUNT',
         type: 'item',  
         icon: 'user',
-        url: 'ui/content/asdsa'
+        url: '/profile'
       }
     ]
   },

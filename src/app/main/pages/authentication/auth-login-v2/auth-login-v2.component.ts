@@ -40,7 +40,7 @@ export class AuthLoginV2Component implements OnInit {
   ) {
     // redirect to home if already logged in
     if (this._authenticationService.currentUserValue) {
-      this._router.navigate(['/']);
+      this._router.navigate(['/dashboard']);
     }
 
     this._unsubscribeAll = new Subject();
@@ -112,7 +112,7 @@ export class AuthLoginV2Component implements OnInit {
     });
 
     // get return url from route parameters or default to '/'
-    this.returnUrl = this._route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this._route.snapshot.queryParams['returnUrl'] || '/dashboard';
 
     // Subscribe to config changes
     this._coreConfigService.config.pipe(takeUntil(this._unsubscribeAll)).subscribe(config => {

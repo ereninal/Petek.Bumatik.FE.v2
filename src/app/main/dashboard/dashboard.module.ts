@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { Ng2FlatpickrModule } from 'ng2-flatpickr';
 
 import { AuthGuard } from 'app/auth/helpers';
 import { Role } from 'app/auth/models';
@@ -22,6 +23,8 @@ import { AnalyticsComponent } from 'app/main/dashboard/analytics/analytics.compo
 import { EcommerceComponent } from 'app/main/dashboard/ecommerce/ecommerce.component';
 import { HomeComponent } from './home/home.component';
 import { StatisticsComponent } from './home/statistics/statistics.component';
+import { TransactionsComponent } from './home/transactions/transactions.component';
+import { TotalPriceComponent } from './home/total-price/total-price.component';
 
 const routes = [
   {
@@ -54,7 +57,7 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [AnalyticsComponent, EcommerceComponent, HomeComponent, StatisticsComponent],
+  declarations: [AnalyticsComponent, EcommerceComponent, HomeComponent, StatisticsComponent, TransactionsComponent, TotalPriceComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -63,9 +66,10 @@ const routes = [
     PerfectScrollbarModule,
     CoreCommonModule,
     NgApexchartsModule,
-    InvoiceModule
+    InvoiceModule,
+    Ng2FlatpickrModule
   ],
-  providers: [DashboardService, InvoiceListService,StatisticsComponent],
+  providers: [DashboardService, InvoiceListService,StatisticsComponent,TransactionsComponent,TotalPriceComponent],
   exports: [EcommerceComponent]
 })
 export class DashboardModule {}
