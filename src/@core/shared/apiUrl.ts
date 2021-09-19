@@ -13,9 +13,11 @@ export class ApiUrl{
     public static API_GET_AUTOMAT_ITEMS = '/api/Automat/GetAutomatItems';
     public static API_GET_MENU_TYPES = '/api/Automat/GetMenuTypes';
     public static API_GET_SCHOOLS = '/api/Schools/GetSchools';
-    ​
+    
     public static API_GET_STATISTICDASHBOARDATA = '/api/Dashboard/GetStatisticDashboardData?parentId=';
     public static API_GET_TRANSACTIONDASHBOARDATA = '/api​/Dashboard​/GetTransactionData?parentId=';
+    public static API_GET_STUDENT_MENUU_PACKAGE_BY_BANDNUMBER = '​/api/Automat/GetStudentMenuPackageByBandNumber';
+    public static API_POST_ADD_SELECT_PACKAGE_MENU_BY_STUDENT = '/api/Parent/AddSelectedPackageMenuByStudent';
 
 
     ​

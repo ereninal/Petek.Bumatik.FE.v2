@@ -111,7 +111,7 @@ const appRoutes: Routes = [
       relativeLinkResolution: 'legacy'
     }),
     NgbModule,
-    ToastrModule.forRoot({ positionClass: 'toast-bottom-right',closeButton: true,toastClass: 'toast ngx-toastr' }),
+    ToastrModule.forRoot({ positionClass: 'toast-bottom-right',toastClass: 'toast ngx-toastr' }),
     TranslateModule.forRoot(),
     ContextMenuModule,
     CoreModule.forRoot(coreConfig),

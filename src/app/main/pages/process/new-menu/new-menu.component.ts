@@ -61,7 +61,9 @@ export class NewMenuComponent implements OnInit {
     this.modelForm = this.formBuilder.group({
       menuTypeId:["",Validators.required],
       useDate:["",Validators.required],
-      selectedAutomatItems: this.formBuilder.array([]),
+      packageId:["",Validators.required],
+      count:[2,Validators.required],
+      //selectedAutomatItems: this.formBuilder.array([]),
     })
   }
   loadStudent(){
@@ -103,7 +105,10 @@ export class NewMenuComponent implements OnInit {
   addSelectedMenuByStudent(){
     if(this.modelForm.valid){
       let selectedItemModel = Object.assign({studentId:Number(this.studentId)},this.modelForm.value);
-      this.parentService.AddSelectedMenuByStudent(selectedItemModel).subscribe((response)=>{
+      console.log(selectedItemModel);
+
+
+      this.parentService.AddSelectedMenuPackageByStudent(selectedItemModel).subscribe((response)=>{
         this.toastService.success(response.message.toString(),"Başarılı");
         this.router.navigate([this.returnUrl]);
       },responseError=>{

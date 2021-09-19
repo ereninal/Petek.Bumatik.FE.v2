@@ -38,15 +38,304 @@
                             <div class="form-group">
                               <div class="input-group">
                                 <input class="form-control" placeholder="yyyy-mm-dd" name="Min-Max Date Picker"
-                                   formControlName="useDate" minDate="{{minDate}}"
-                                  maxDate=""
-                                  type="date">
-                               
+                                  formControlName="useDate" minDate="{{minDate}}" maxDate="" type="date">
+
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="row border p-3 ml-1 mr-1">
+                        <div class="row border p-1">
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 1</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-1">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="3" id="package-1" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package1" name="packageId" [value]="1" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package1">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 2</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-2">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-2" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package2" name="packageId" [value]="2" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package2">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 3</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-3">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-3" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package3" name="packageId" [value]="3" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package3">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 4</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-4">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-4" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package4" name="packageId" [value]="4" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package4">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 5</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-5">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-5" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package5" name="packageId" [value]="5" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package5">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 6</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-6">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-6" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package6" name="packageId" [value]="6" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package6">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 7</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-7">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-7" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package7" name="packageId" [value]="7" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package7">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 8</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-8">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-8" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package8" name="packageId" [value]="8" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package8">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 9</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-9">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-9" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package9" name="packageId" [value]="9" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package9">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 10</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-10">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-10" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package10" name="packageId" [value]="10" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package10">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 11</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-11">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-11" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package11" name="packageId" [value]="11" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package11">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 12</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-12">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-12" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package12" name="packageId" [value]="12" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package12">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 13</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-13">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-13" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package13" name="packageId" [value]="13" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package13">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 14</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-14">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-14" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package14" name="packageId" [value]="14" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package14">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 15</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-15">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-15" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package15" name="packageId" [value]="15" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package15">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 16</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-16">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-16" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package16" name="packageId" [value]="16" class="custom-control-input"
+                                      formControlName="packageId" checked/>
+                                    <label class="custom-control-label" for="package16">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 17</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-17">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-17" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package17" name="packageId" [value]="17" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package17">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-lg-3 shadow mb-2 bg-body rounded">
+                            <div class="card text-center mb-3">
+                              <div class="card-body">
+                                <h4 class="card-title">Paket 18</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                  content.</p>
+                                  <label for="package-18">Yiyecek Sayısı</label>
+                                  <input type="text" class="form-control text-center" formControlName="count" [value]="2" id="package-18" disabled />
+                                  <div class="custom-control custom-radio mt-1">
+                                    <input type="radio" id="package18" name="packageId" [value]="18" class="custom-control-input"
+                                      formControlName="packageId" />
+                                    <label class="custom-control-label" for="package18">Seçmek için tıklayınız</label>
+                                  </div>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="row border p-3 ml-1 mr-1">
                           <div class="col-lg-12">
                             <div formArrayName="selectedAutomatItems">
                               <div class="row mb-2" *ngFor="let item of selectedAutomatItems.controls; let i=index">
@@ -81,13 +370,14 @@
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                       </form>
                       <div class="d-flex flex-row-reverse mt-2">
-                        
-                          <button type="button" id="buttonStudentAdd" class="btn btn-gradient-secondary" (click)="addSelectedMenuByStudent()">İşlemi Tamamla</button>
-                         
-                        
+
+                        <button type="button" id="buttonStudentAdd" class="btn btn-gradient-secondary"
+                          (click)="addSelectedMenuByStudent()">İşlemi Tamamla</button>
+
+
                       </div>
                     </div>
                   </div>
