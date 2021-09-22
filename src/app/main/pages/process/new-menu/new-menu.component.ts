@@ -106,18 +106,17 @@ export class NewMenuComponent implements OnInit {
     if(this.modelForm.valid){
       let selectedItemModel = Object.assign({studentId:Number(this.studentId)},this.modelForm.value);
       console.log(selectedItemModel);
-
-
       this.parentService.AddSelectedMenuPackageByStudent(selectedItemModel).subscribe((response)=>{
         this.toastService.success(response.message.toString(),"Başarılı");
         this.router.navigate([this.returnUrl]);
       },responseError=>{
-        if(responseError.error.Errors.length>0){
-          console.log(responseError);
-          // for (let i = 0; i < responseError.error.Errors.length; i++) {
-          //   this.toastService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası.")
-          // }
-        }
+        console.log(responseError);
+        // if(responseError.error.Errors.length>0){
+          
+        //   for (let i = 0; i < responseError.error.Errors.length; i++) {
+        //     this.toastService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası.")
+        //   }
+        // }
       })
     }
     else{

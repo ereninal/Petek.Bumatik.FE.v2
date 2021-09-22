@@ -3,6 +3,7 @@ export interface StudentMenu{
     menuType:string;
     menuId:number;
     useDate:string;
+    packageName:string;
     createdDate:string;
     selectedItemCount:number;
 }
